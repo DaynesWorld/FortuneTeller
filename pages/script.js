@@ -1,7 +1,3 @@
-import { useState } from "react";
-import { Button, Card } from "@/components/ui";
-import { motion } from "framer-motion";
-
 const roasts = [
     "You're not single by choice, but by universal consensus.",
     "Your ex moved on so fast, NASA is trying to study her speed.",
@@ -42,33 +38,7 @@ const roasts = [
     "Your last real relationship was with your childhood stuffed animal, and even it left you."
 ];
 
-export default function RoastPage() {
-    const [roast, setRoast] = useState("Click the button for a roast");
-
-    const getRandomRoast = () => {
-        const randomIndex = Math.floor(Math.random() * roasts.length);
-        setRoast(roasts[randomIndex]);
-    };
-
-    return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white p-4">
-            <motion.h1 
-                className="text-4xl font-bold mb-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-            >
-                Single Guy Roast Generator
-            </motion.h1>
-            <Card className="p-6 w-96 bg-gray-800 rounded-2xl shadow-xl">
-                <p className="text-lg font-semibold text-center">{roast}</p>
-            </Card>
-            <Button 
-                className="mt-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition duration-300"
-                onClick={getRandomRoast}
-            >
-                Roast Me
-            </Button>
-        </div>
-    );
+function generateRoast() {
+    const randomIndex = Math.floor(Math.random() * roasts.length);
+    document.getElementById("roast-text").textContent = roasts[randomIndex];
 }
