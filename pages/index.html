@@ -4,52 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Guy Roast Generator</title>
+    
+    <!-- Link to the Tailwind-compiled CSS or a custom stylesheet -->
+    <link rel="stylesheet" href="styles.css"> 
+    
     <script defer src="script.js"></script> 
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: white;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        h1 {
-            font-size: 2rem;
-            text-align: center;
-        }
-        .roast-container {
-            background: #333;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            max-width: 400px;
-            margin: 20px;
-            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.6);
-        }
-        button {
-            background-color: red;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-        }
-        button:hover {
-            background-color: darkred;
-        }
-    </style>
 </head>
-<body>
-    <h1>Single Guy Roast Generator</h1>
-    <div class="roast-container">
-        <p id="roast-text">Click the button for a roast</p>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center h-screen">
+    <h1 class="text-4xl font-bold mb-6">Single Guy Roast Generator</h1>
+    
+    <div class="bg-gray-800 p-6 w-96 rounded-2xl shadow-xl text-center">
+        <p id="roast-text" class="text-lg font-semibold">Click the button for a roast</p>
     </div>
-    <button onclick="generateRoast()">Roast Me</button>
+    
+    <button onclick="generateRoast()" class="mt-6 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition duration-300">
+        Roast Me
+    </button>
 </body>
 </html>
